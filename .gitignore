@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data (We ignore the files, but keep the folder structure thanks to .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# MLflow
+mlruns/
+
+# IDE Settings
+.vscode/
+.idea/
+.DS_Store
+
+# Jupyter Checkpoints
+.ipynb_checkpoints

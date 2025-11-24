@@ -1,0 +1,11 @@
+pandas
+numpy
+faker
+pyarrow
+duckdb
+scikit-learn
+xgboost
+mlflow
+streamlit
+notebook
+ipykernel
