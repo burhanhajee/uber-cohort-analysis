@@ -20,7 +20,6 @@
 ### 1. The "Snake Plot": Unmasking the Personas
 *We used K-Means Clustering (k=4) to segment drivers based on 6 behavioral features. The "Snake Plot" below standardizes these behaviors to show strategic differences.*
 
-![Driver Personas](reports/snake_plot.png)
 
 * **The Pro-Optimizer (Red):** High utilization, high surge reliance. They treat driving as a business. **Churn Risk: Low (7%).**
 * **The Quest Grinder (Blue):** High volume, low efficiency. They chase incentives blindly. **Churn Risk: Medium (23%).**
@@ -30,7 +29,6 @@
 ### 2. The Churn Drivers: It's Not Just Money
 *Using XGBoost feature importance, we discovered that frustration drives churn more than earnings.*
 
-![Feature Importance](reports/feature_importance.png)
 
 * **#1 Predictor:** `cancellation_rate`. Drivers who frequently cancel are signaling frustration with the dispatch system.
 * **Strategic Recommendation:** Retention budget should not be spent on cash bonuses for "At-Risk" drivers. Instead, invest in **Re-Onboarding/Education** to reduce cancellations and frustration.

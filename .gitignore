@@ -7,7 +7,7 @@ venv/
 __pycache__/
 *.pyc
 
-# Data (We ignore the files, but keep the folder structure thanks to .gitkeep)
+# Data
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*

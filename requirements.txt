@@ -9,3 +9,5 @@ mlflow
 streamlit
 notebook
 ipykernel
+seaborn
+plotly
