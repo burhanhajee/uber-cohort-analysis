@@ -98,7 +98,6 @@ def run_optimization_and_training():
     })
     
     print("\n" + "="*50)
-    print("✨ OPTIMIZATION COMPLETE")
     print(f"Best ROC AUC Score on CV: {best_params_cv_score:.4f}")
     print("Best Hyperparameters:")
     for k, v in random_search.best_params_.items():
