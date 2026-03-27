@@ -7,11 +7,11 @@ venv/
 __pycache__/
 *.pyc
 
-# Data
+# Data — raw logs are large and excluded; processed features are committed for the app
 data/raw/*
 !data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
+data/processed/weekly_cohort_*.csv
+data/processed/scored_cohort_*.csv
 
 # MLflow
 mlruns/
@@ -21,5 +21,17 @@ mlruns/
 .idea/
 .DS_Store
 
+# Claude Code internal files
+.claude/
+
 # Jupyter Checkpoints
 .ipynb_checkpoints
+
+# Streamlit secrets (never commit real credentials)
+.streamlit/secrets.toml
+
+# Automation runtime outputs
+automation/logs/*.csv
+automation/logs/*.html
+data/processed/weekly_cohort_*.csv
+data/processed/scored_cohort_*.csv

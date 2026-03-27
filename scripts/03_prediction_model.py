@@ -19,7 +19,7 @@ def run_optimization_and_training():
 
     # 1. Load Data
     if not os.path.exists(INPUT_PATH):
-        print(f"Error: Input file not found at {INPUT_PATH}. Run script 03 first.")
+        print(f"Error: Input file not found at {INPUT_PATH}. Run script 02 first.")
         return
 
     df = pd.read_csv(INPUT_PATH)
@@ -30,7 +30,7 @@ def run_optimization_and_training():
     features = [
         'avg_earnings_per_hour_online', 'trip_utilization_rate', 'surge_reliance_score',
         'premium_trip_ratio', 'quest_completion_rate', 'cancellation_rate',
-        'acceptance_rate', 'pro_tier_status', 'cluster_label'
+        'acceptance_rate', 'pro_tier_rank', 'cluster_label'
     ]
     
     X = df[features]
@@ -61,10 +61,9 @@ def run_optimization_and_training():
     xgb_base = xgb.XGBClassifier(
         objective='binary:logistic',
         scale_pos_weight=ratio,
-        enable_categorical=True, 
+        enable_categorical=True,
         eval_metric='logloss',
-        random_state=42,
-        use_label_encoder=False 
+        random_state=42
     )
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -91,10 +90,9 @@ def run_optimization_and_training():
     best_params.update({
         'objective': 'binary:logistic',
         'scale_pos_weight': ratio,
-        'enable_categorical': True, 
+        'enable_categorical': True,
         'eval_metric': 'logloss',
-        'random_state': 42,
-        'use_label_encoder': False
+        'random_state': 42
     })
     
     print("\n" + "="*50)

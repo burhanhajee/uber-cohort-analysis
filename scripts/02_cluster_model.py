@@ -29,7 +29,7 @@ def train_cluster_model():
 
     # 2. Feature Selection
     # DROPPING 'acceptance_rate' because it is 96% correlated with 'trip_utilization_rate'.
-    # We features but exclude identifiers (ID) and targets (Churned).
+    # We use features but exclude identifiers (ID) and targets (Churned).
     features_to_cluster = [
         'avg_earnings_per_hour_online',
         'trip_utilization_rate',
@@ -60,12 +60,20 @@ def train_cluster_model():
 
 
     joblib.dump(scaler, SCALER_PATH)
+    print(f"Scaler saved to {SCALER_PATH}")
     joblib.dump(kmeans, KMEANS_PATH)
+    print(f"K-Means model saved to {KMEANS_PATH}")
 
     df.to_csv(OUTPUT_PATH, index=False)
-    
+    print(f"Clustered data saved to {OUTPUT_PATH}")
+
+    print("\nCluster Sizes:")
+    print(df['cluster_label'].value_counts().sort_index())
+
     print("\nCluster Centers (Mean Values):")
     print(df.groupby('cluster_label')[features_to_cluster].mean())
+
+    print("\n--- Driver Segmentation Pipeline Complete ---")
 
 if __name__ == "__main__":
     train_cluster_model()
