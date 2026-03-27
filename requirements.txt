@@ -4,6 +4,7 @@ faker
 pyarrow
 duckdb
 scikit-learn
+joblib
 xgboost
 mlflow
 streamlit
